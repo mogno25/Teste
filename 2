@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int is_fibonacci(int num) {
+    int a = 0, b = 1, temp;
+    if (num == a || num == b) return 1;
+    while (b < num) {
+        temp = b;
+        b = a + b;
+        a = temp;
+    }
+    return (b == num);
+}
+
+int main() {
+    int numero;
+    printf("Informe um número: ");
+    scanf("%d", &numero);
+    if (is_fibonacci(numero)) {
+        printf("O número %d pertence à sequência de Fibonacci.\n", numero);
+    } else {
+        printf("O número %d não pertence à sequência de Fibonacci.\n", numero);
+    }
+    return 0;
+}
